@@ -71,6 +71,8 @@ import { EditDoctorComponent } from './components/edit-doctor/edit-doctor.compon
 import { ImportMedicineComponent } from './components/import-medicine/import-medicine.component';
 import { ModalAddNewTypeMedicineComponent } from './components/modal-add-new-type-medicine/modal-add-new-type-medicine.component';
 import { ListMedicinesComponent } from './components/list-medicines/list-medicines.component';
+import { ModalDisalbleThuocComponent } from './components/modal-disalble-thuoc/modal-disalble-thuoc.component';
+import { ModalUpdatePriceThuocComponent } from './components/modal-update-price-thuoc/modal-update-price-thuoc.component';
 
 
 
@@ -104,7 +106,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, AddDoctorComponent, ListDoctorsComponent, ListPatientsComponent, EditPatientComponent, AddPatientComponent, DetailPatientComponent, ListPaymentsComponent, InvoiceComponent, EditDoctorComponent, ImportMedicineComponent, ModalAddNewTypeMedicineComponent, ListMedicinesComponent,
+    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, AddDoctorComponent, ListDoctorsComponent, ListPatientsComponent, EditPatientComponent, AddPatientComponent, DetailPatientComponent, ListPaymentsComponent, InvoiceComponent, EditDoctorComponent, ImportMedicineComponent, ModalAddNewTypeMedicineComponent, ListMedicinesComponent, ModalDisalbleThuocComponent, ModalUpdatePriceThuocComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),

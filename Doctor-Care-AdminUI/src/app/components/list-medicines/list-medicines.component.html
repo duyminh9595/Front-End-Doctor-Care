@@ -86,9 +86,13 @@
                     <td>{{item.quantity}}</td>
                     <td>{{item.price}}</td>
                     <td>{{item.status}}</td>
-                    <td><button type="button" class="btn btn-primary">Update Giá</button></td>
-                    <td *ngIf="item.status"><button type="button" class="btn btn-danger">Disable</button></td>
-                    <td *ngIf="!item.status"><button type="button" class="btn btn-primary">Enable</button></td>
+                    <td><button type="button" class="btn btn-primary" (click)="updatePrice(item)"
+                        *ngIf="item.status">Update Giá</button>
+                    </td>
+                    <td *ngIf="item.status" (click)="enableThuoc(item)"><button type="button"
+                        class="btn btn-danger">Disable</button></td>
+                    <td *ngIf="!item.status"><button type="button" class="btn btn-primary "
+                        (click)="enableThuoc(item)">Enable</button></td>
                   </tr>
                 </tbody>
               </table>

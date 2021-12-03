@@ -46,4 +46,11 @@ export class SlideBarComponent implements OnInit {
   gotohome() {
     this.router.navigateByUrl('/');
   }
+  local: Storage = localStorage;
+  doLogout() {
+    this.local.removeItem("emailDoctorLogin")
+    this.local.removeItem("tokenDoctorLogin")
+    this.local.removeItem("doctorImageUrl")
+    window.location.href = '/';
+  }
 }
