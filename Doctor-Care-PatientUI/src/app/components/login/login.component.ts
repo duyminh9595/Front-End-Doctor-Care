@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { MatDialog } from '@angular/material/dialog';
 import { LoginSuccess } from 'src/app/models/login-success';
 import { PatientLogin } from 'src/app/models/patient-login';
+import { ModalForgotPasswordComponent } from '../modal-forgot-password/modal-forgot-password.component';
 import { LoginService } from './service/login.service';
 
 @Component({
@@ -17,7 +19,7 @@ export class LoginComponent
   loading = false;
   error = "";
   hide = true;
-  constructor(private formBuilder: FormBuilder, private ser: LoginService) { }
+  constructor(private formBuilder: FormBuilder, private ser: LoginService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.authForm = this.formBuilder.group({
@@ -53,5 +55,14 @@ export class LoginComponent
     this.local.setItem('tokenPatientLogin', this.userSuccessDTO.token);
     this.local.setItem('patientImageUrl', this.userSuccessDTO.image_url);
     window.location.href = '/';
+  }
+  forgotPassword() {
+    const dialogRef = this.dialog.open(ModalForgotPasswordComponent, {
+      width: '450px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
   }
 }

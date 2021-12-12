@@ -8,4 +8,6 @@ export class TodayAppointment {
     buoi!: string;
     sdt!: number;
     image_url!: string;
+    user_send_cancel!: boolean;
+    bs_da_chuandoan!: boolean;
 }

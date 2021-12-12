@@ -97,9 +97,15 @@
                     <td routerLink="/patient/{{item.id}}" routerLinkActive="active"
                       routerLinkActive="router-link-active">
                       {{item.enable_status}}</td>
-                    <td><button mat-icon-button color="accent" class="btn-tbl-edit" (click)="editPatient(item.id)">
+                    <td>
+                      <button mat-icon-button color="accent" class="btn-tbl-delete"
+                        (click)="seeHoSoBenhAnPatient(item.id)">
+                        <mat-icon aria-label="Delete" class="col-white">description</mat-icon>
+                      </button>
+                      <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="editPatient(item.id)">
                         <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
                       </button>
+
                       <button mat-icon-button color="accent" class="btn-tbl-delete" (click)="disablePatient(item.id)"
                         *ngIf="!item.enable_status">
                         <mat-icon aria-label="Delete" class="col-white">done</mat-icon>

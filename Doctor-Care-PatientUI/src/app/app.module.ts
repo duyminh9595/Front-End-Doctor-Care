@@ -69,6 +69,12 @@ import { ViewAppointmentComponent } from './components/view-appointment/view-app
 import { ModalModule } from 'ngb-modal';
 import { ModalAddApointmentsComponent } from './components/modal-add-apointments/modal-add-apointments.component';
 import { PastApointmentComponent } from './components/past-apointment/past-apointment.component';
+import { DetailApointmentComponent } from './components/detail-apointment/detail-apointment.component';
+import { HoSoBenhAnComponent } from './components/ho-so-benh-an/ho-so-benh-an.component';
+import { ModalChangePasswordComponent } from './components/modal-change-password/modal-change-password.component';
+import { ModalForgotPasswordComponent } from './components/modal-forgot-password/modal-forgot-password.component';
+import { RenewpasswordComponent } from './components/renewpassword/renewpassword.component';
+import { ModalRenewPasswordComponent } from './components/modal-renew-password/modal-renew-password.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -81,13 +87,17 @@ const routes: Routes = [
       { path: 'add-appointment', component: AddAppointmentComponent },
       { path: 'add-appointment-layout', component: AddAppointmentLayoutComponent },
       { path: 'view-appointment', component: ViewAppointmentComponent },
+      { path: 'detail-apointment/:id', component: DetailApointmentComponent },
       { path: 'past-appointment', component: PastApointmentComponent },
+      { path: 'hosobenhan', component: HoSoBenhAnComponent },
     ]
     , canActivate: [VerifyJwt],
 
   },
+  { path: 'forgotpassword/:token', component: RenewpasswordComponent },
   { path: '#', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
+
 ]
 
 @NgModule({
@@ -95,7 +105,7 @@ const routes: Routes = [
     AppComponent,
     LoginComponent, DashboardComponent, HompageComponent,
     HeaderComponent, SlideBarComponent, AddAppointmentComponent,
-    AddAppointmentLayoutComponent, ViewAppointmentComponent, ModalAddApointmentsComponent, PastApointmentComponent
+    AddAppointmentLayoutComponent, ViewAppointmentComponent, ModalAddApointmentsComponent, PastApointmentComponent, DetailApointmentComponent, HoSoBenhAnComponent, ModalChangePasswordComponent, ModalForgotPasswordComponent, RenewpasswordComponent, ModalRenewPasswordComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),

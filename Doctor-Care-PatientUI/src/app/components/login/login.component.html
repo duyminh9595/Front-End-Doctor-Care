@@ -50,7 +50,7 @@
                   </span>
                 </label>
               </div>
-              <a class="txt1" routerLink="/authentication/forgot-password">Forgot Password?</a>
+              <a class="txt1" (click)="forgotPassword()">Forgot Password?</a>
             </div>
             <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
             <div class="container-auth-form-btn">

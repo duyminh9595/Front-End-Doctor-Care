@@ -55,4 +55,7 @@ export class ListDoctorsComponent implements OnInit {
     this.doctors = [];
     this.ser.getDanhSachDoctorByName(data).subscribe(this.getDatas());
   }
+  seeAboutDoctor(item: DoctorInList) {
+    this.router.navigateByUrl('/doctor/' + item.id);
+  }
 }

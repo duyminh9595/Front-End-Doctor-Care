@@ -4,4 +4,5 @@ export class PastApointment {
     date!: string;
     gio!: string;
     tenbs!: string;
+    check!: boolean;
 }

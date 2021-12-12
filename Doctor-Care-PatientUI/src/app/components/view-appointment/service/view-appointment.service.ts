@@ -17,11 +17,35 @@ export class ViewAppointmentService {
       headers: yourHeader,
     });
   }
+  getAppointmentsFromToday() {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenPatientLogin')}`
+    });
+    return this.httpClient.get<GetResponseTodayAppointment>(this.APIEndPoint + "/patient/core/appointmentfromtoday", {
+      headers: yourHeader,
+    });
+  }
+  getAppointmentsBeforeToday() {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenPatientLogin')}`
+    });
+    return this.httpClient.get<GetResponseTodayAppointment>(this.APIEndPoint + "/patient/core/appointmentbeforetoday", {
+      headers: yourHeader,
+    });
+  }
   huyAppointment(id: number) {
     const yourHeader: HttpHeaders = new HttpHeaders({
       Authorization: `${localStorage.getItem('tokenPatientLogin')}`
     });
     return this.httpClient.post<any>(this.APIEndPoint + "/patient/core/huyappointment?id=" + id, null, {
+      headers: yourHeader,
+    });
+  }
+  datlaiAppointment(id: number) {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenPatientLogin')}`
+    });
+    return this.httpClient.post<any>(this.APIEndPoint + "/patient/core/datlaiappointment?id=" + id, null, {
       headers: yourHeader,
     });
   }

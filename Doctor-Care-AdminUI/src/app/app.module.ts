@@ -34,9 +34,13 @@ import {
   MatPaginatorModule
 } from '@angular/material/paginator';
 import {
+  MatTabsModule
+} from '@angular/material/tabs';
+import {
   MatTableModule
 } from '@angular/material/table';
 import { MatOptionModule } from '@angular/material/core';
+import { MatPseudoCheckboxModule } from '@angular/material/core';
 import {
   PerfectScrollbarModule,
   PERFECT_SCROLLBAR_CONFIG,
@@ -73,6 +77,11 @@ import { ModalAddNewTypeMedicineComponent } from './components/modal-add-new-typ
 import { ListMedicinesComponent } from './components/list-medicines/list-medicines.component';
 import { ModalDisalbleThuocComponent } from './components/modal-disalble-thuoc/modal-disalble-thuoc.component';
 import { ModalUpdatePriceThuocComponent } from './components/modal-update-price-thuoc/modal-update-price-thuoc.component';
+import { ListApointmentComponent } from './components/list-apointment/list-apointment.component';
+import { ApproveDisableApointmentComponent } from './components/approve-disable-apointment/approve-disable-apointment.component';
+import { ModalDetailHosobenhanComponent } from './components/modal-detail-hosobenhan/modal-detail-hosobenhan.component';
+import { DetailDoctorComponent } from './components/detail-doctor/detail-doctor.component';
+import { DoanhThuComponent } from './components/doanh-thu/doanh-thu.component';
 
 
 
@@ -89,12 +98,16 @@ const routes: Routes = [
       { path: 'list-patients', component: ListPatientsComponent },
       { path: 'list-medicines', component: ListMedicinesComponent },
       { path: 'list-payments', component: ListPaymentsComponent },
+      { path: 'list-apointments', component: ListApointmentComponent },
+      { path: 'block-apointments', component: ApproveDisableApointmentComponent },
       { path: 'add-patient', component: AddPatientComponent },
       { path: 'import-medicine', component: ImportMedicineComponent },
       { path: 'patient/:id', component: DetailPatientComponent },
+      { path: 'doctor/:id', component: DetailDoctorComponent },
       { path: 'invoice/:id', component: InvoiceComponent },
       { path: 'editdoctor/:id', component: EditDoctorComponent },
       { path: 'editpatient/:id', component: EditPatientComponent },
+      { path: 'doanhthu', component: DoanhThuComponent },
     ]
     , canActivate: [VerifyJwt],
 
@@ -106,7 +119,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, AddDoctorComponent, ListDoctorsComponent, ListPatientsComponent, EditPatientComponent, AddPatientComponent, DetailPatientComponent, ListPaymentsComponent, InvoiceComponent, EditDoctorComponent, ImportMedicineComponent, ModalAddNewTypeMedicineComponent, ListMedicinesComponent, ModalDisalbleThuocComponent, ModalUpdatePriceThuocComponent,
+    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, AddDoctorComponent, ListDoctorsComponent, ListPatientsComponent, EditPatientComponent, AddPatientComponent, DetailPatientComponent, ListPaymentsComponent, InvoiceComponent, EditDoctorComponent, ImportMedicineComponent, ModalAddNewTypeMedicineComponent, ListMedicinesComponent, ModalDisalbleThuocComponent, ModalUpdatePriceThuocComponent, ListApointmentComponent, ApproveDisableApointmentComponent, ModalDetailHosobenhanComponent, DetailDoctorComponent, DoanhThuComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
@@ -126,7 +139,7 @@ const routes: Routes = [
       appId: "1:1053553302212:web:5ca79d1dd45c389ca28791",
       measurementId: "G-6Q30DEJELJ"
     }),
-    HttpClientModule, MatDialogModule
+    HttpClientModule, MatDialogModule, MatPseudoCheckboxModule, MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

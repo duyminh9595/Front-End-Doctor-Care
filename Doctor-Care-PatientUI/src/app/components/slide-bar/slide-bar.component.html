@@ -6,9 +6,6 @@
       <ul class="list">
         <li class="sidebar-user-panel">
           <div class="user-panel">
-            <div class=" image">
-              <img src={{imageUrl}} class="img-circle user-img-circle" alt="User Image" />
-            </div>
           </div>
           <div class="profile-usertitle">
             <div class="sidebar-userpic-name">{{namePatient}}</div>
@@ -51,12 +48,29 @@
         </li>
 
         <li>
+          <a [routerLink]="['/hosobenhan']" routerLinkActive="router-link-active" class="menu-top">
+            <i class="material-icons-two-tone">reorder</i>
+            <span class="hide-menu">Hồ Sơ Bệnh Án
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a class="menu-top" (click)="doiMatKhau()">
+            <i class="material-icons-two-tone">create</i>
+            <span class="hide-menu">Đổi Mật Khẩu
+            </span>
+          </a>
+        </li>
+
+        <li>
           <a class="" class="menu-top" (click)="doLogout()">
             <i class="material-icons-two-tone">power_settings_new</i>
             <span class="hide-menu">Logout
             </span>
           </a>
         </li>
+
       </ul>
     </div>
     <!-- #Menu -->

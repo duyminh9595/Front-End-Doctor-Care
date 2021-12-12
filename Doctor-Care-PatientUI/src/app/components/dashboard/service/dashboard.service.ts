@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { DetailPatient } from 'src/app/models/detail-patient';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -17,4 +18,15 @@ export class DashboardService {
       headers: yourHeader,
     });
   }
+  checkDetailPatient(): Observable<any> {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenPatientLogin')}`
+    });
+    return this.httpClient.get<GetResponse>(this.APIEndPoint + "/patient/core/getnamepatient", {
+      headers: yourHeader,
+    });
+  }
+}
+interface GetResponse {
+  response: DetailPatient[];
 }

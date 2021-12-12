@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ModalChangePasswordComponent } from '../modal-change-password/modal-change-password.component';
 
 @Component({
   selector: 'app-slide-bar',
@@ -14,7 +16,7 @@ export class SlideBarComponent implements OnInit {
   namePatient!: string;
   imageUrl!: string;
   localStore: Storage = localStorage;
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.namePatient = localStorage.getItem('emailPatientLogin')!
@@ -47,9 +49,18 @@ export class SlideBarComponent implements OnInit {
   }
   local: Storage = localStorage;
   doLogout() {
-    this.local.removeItem("emailAdminLogin")
-    this.local.removeItem("tokenAdminLogin")
-    this.local.removeItem("adminImageUrl")
+    this.local.removeItem("emailPatientLogin")
+    this.local.removeItem("tokenPatientLogin")
+    this.local.removeItem("patientImageUrl")
     window.location.href = '/';
+  }
+  doiMatKhau() {
+    const dialogRef = this.dialog.open(ModalChangePasswordComponent, {
+      width: '450px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.doLogout();
+    });
   }
 }

@@ -56,4 +56,7 @@ export class ListPatientsComponent implements OnInit {
     this.patients = [];
     this.ser.getDanhSachPatient().subscribe(this.getDatas());
   }
+  seeHoSoBenhAnPatient(id: number) {
+    this.router.navigateByUrl('/patient/' + id);
+  }
 }

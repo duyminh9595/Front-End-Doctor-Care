@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PastApointment } from 'src/app/models/past-apointment';
 import { PastApointmentService } from './service/past-apointment.service';
 
@@ -9,7 +10,7 @@ import { PastApointmentService } from './service/past-apointment.service';
 })
 export class PastApointmentComponent implements OnInit {
 
-  constructor(private ser: PastApointmentService) { }
+  constructor(private ser: PastApointmentService, private router: Router) { }
 
   ngOnInit(): void {
     this.getResponse();
@@ -23,5 +24,9 @@ export class PastApointmentComponent implements OnInit {
       console.log(data)
       this.data = data;
     }
+  }
+  detailApointment(data: PastApointment) {
+    if (data.check)
+      this.router.navigateByUrl('/detail-apointment/' + data.id);
   }
 }

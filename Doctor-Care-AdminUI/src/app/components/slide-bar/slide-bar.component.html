@@ -7,7 +7,7 @@
         <li class="sidebar-user-panel">
           <div class="user-panel">
             <div class=" image">
-              <img src={{imageUrl}} class="img-circle user-img-circle" alt="User Image" />
+
             </div>
           </div>
           <div class="profile-usertitle">
@@ -32,7 +32,7 @@
           </a>
           <ul class="ml-menu-2" style="display: block;" *ngIf="appointmentshow">
             <li>
-              <a>
+              <a [routerLink]="['/list-apointments']" routerLinkActive="router-link-active">
                 View appointment
               </a>
             </li>
@@ -42,8 +42,8 @@
               </a>
             </li>
             <li>
-              <a>
-                Block appointment
+              <a [routerLink]="['/block-apointments']" routerLinkActive="router-link-active">
+                Cancel appointment
               </a>
             </li>
           </ul>
@@ -108,12 +108,12 @@
           <ul class="ml-menu-2" style="display: block;" *ngIf="paymentshow">
             <li>
               <a routerLink="/list-payments" routerLinkActive="active">
-                All payments
+                Hóa đơn
               </a>
             </li>
             <li>
-              <a routerLink="/add-patient" routerLinkActive="active">
-                Edit appointment
+              <a routerLink="/doanhthu" routerLinkActive="active">
+                Doanh thu
               </a>
             </li>
           </ul>

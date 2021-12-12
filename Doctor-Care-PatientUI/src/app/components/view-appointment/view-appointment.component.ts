@@ -35,4 +35,15 @@ export class ViewAppointmentComponent implements OnInit {
       }
     })
   }
+  datlailich(item: TodayAppointment) {
+    this.ser.datlaiAppointment(item.id).subscribe({
+      next: res => {
+        this.today_appointments = [];
+        this.getListTodayAppointments()
+      },
+      error: err => {
+        alert("Đặt lại thất bại")
+      }
+    })
+  }
 }

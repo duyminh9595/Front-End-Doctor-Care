@@ -30,19 +30,12 @@
                     <ul class="header-buttons-left ms-0">
                       <li class="dropdown">
                         <h2>
-                          <strong>Payments</strong></h2>
+                          <strong>Biên lai khám bệnh</strong></h2>
                       </li>
                       <li class="dropdown m-l-20">
                         <label for="search-input"><i class="material-icons search-icon">search</i></label>
-                        <input placeholder="Search" type="text" #filter class="browser-default search-field"
-                          aria-label="Search box">
-                      </li>
-                      <li>
-                        <div class="icon-button-demo m-l-10">
-                          <button mat-mini-fab color="warn">
-                            <mat-icon class="col-white">delete</mat-icon>
-                          </button>
-                        </div>
+                        <input placeholder="Nhập mã khám bệnh" type="number" #filter (keyup)="onKeyId($event)"
+                          class="browser-default search-field" aria-label="Search box">
                       </li>
                     </ul>
                   </div>
@@ -51,13 +44,13 @@
                       <li>
                         <div class="icon-button-demo">
                           <button mat-mini-fab color="primary">
-                            <mat-icon class="col-white">add</mat-icon>
+                            <mat-icon class="col-white">search</mat-icon>
                           </button>
                         </div>
                       </li>
                       <li>
                         <div class="icon-button-demo">
-                          <button mat-mini-fab color="primary">
+                          <button mat-mini-fab color="primary" (click)="doRefresh()">
                             <mat-icon class="col-white">refresh</mat-icon>
                           </button>
                         </div>
@@ -66,46 +59,36 @@
                   </div>
                 </div>
               </div>
+              <br>
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Tên bác sĩ</th>
+                    <th scope="col">Tên bệnh nhân</th>
+                    <th scope="col">Ngày</th>
+                    <th scope="col">Tiền khám bệnh</th>
+                    <th scope="col">Tiền thuốc</th>
+                    <th scope="col">Tổng biên lai</th>
+                    <th scope="col">Chức năng</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row"><input type="checkbox" id="vehicle1" name="vehicle1" value="1"
-                        (click)="getId($event)"></th>
-                    <td routerLink="/invoice/1" routerLinkActive="active" routerLinkActive="router-link-active">Mark
-                    </td>
-                    <td>Otto</td>
-                    <td><button mat-icon-button color="accent" class="btn-tbl-edit">
-                        <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
-                      </button>
-                      <button mat-icon-button color="accent" class="btn-tbl-delete">
-                        <mat-icon aria-label="Delete" class="col-white">delete</mat-icon>
+                  <tr *ngFor="let item of data">
+                    <th>{{item.id}}</th>
+                    <td>{{item.tenbacsi}}</td>
+                    <td>{{item.tenbenhnhan}}</td>
+                    <td>{{item.ngay}}</td>
+                    <td>{{item.tienkhambenh}}</td>
+                    <td>{{item.tienthuoc}}</td>
+                    <td>{{item.tongbienlai}}</td>
+                    <td><button mat-icon-button color="accent" class="btn-tbl-delete" (click)="tratien(item.id)">
+                        <mat-icon aria-label="Delete" class="col-white">add</mat-icon>
                       </button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
                   </tr>
                 </tbody>
               </table>
 
-              <mat-paginator #paginator [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-              </mat-paginator>
             </div>
           </div>
         </div>

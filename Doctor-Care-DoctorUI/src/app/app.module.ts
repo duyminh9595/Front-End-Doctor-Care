@@ -72,6 +72,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DashboardComponent },
       { path: 'list-apointment', component: ListAppointmentTodayDoctorComponent },
+      { path: 'kham-benh/:lichhenid', component: KhamBenhComponent },
     ]
     , canActivate: [VerifyJwt],
 

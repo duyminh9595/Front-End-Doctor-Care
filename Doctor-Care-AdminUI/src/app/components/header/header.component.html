@@ -5,8 +5,7 @@
         (click)="isNavbarCollapsed = !isNavbarCollapsed" aria-expanded="false"></a>
       <a href="#" onClick="return false;" class="bars" (click)="mobileMenuSidebarOpen($event,'overlay-open')"></a>
       <a class="navbar-brand" routerLink={{homePage}}>
-        <img src="assets/images/logo.png" alt="" />
-        <span class="logo-name">Cliniva</span>
+        <span class="logo-name">ADMIN UI</span>
       </a>
     </div>
     <div class="collapse navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
@@ -19,11 +18,6 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- Full Screen Button -->
-        <li class="fullscreen">
-          <button mat-icon-button (click)="callFullscreen()" class=" nav-notification-icons">
-            <mat-icon>fullscreen</mat-icon>
-          </button>
-        </li>
         <!-- #END# Full Screen Button -->
 
         <!-- #START# Notifications-->
@@ -56,7 +50,7 @@
           </div>
         </li>
         <!-- #END# Notifications-->
-        <li class="nav-item user_profile" ngbDropdown>
+        <!-- <li class="nav-item user_profile" ngbDropdown>
           <a href="#" onClick="return false;" ngbDropdownToggle role="button" class="nav-notification-icons pt-0">
             <img src={{userImg}} class="rounded-circle" width="32" height="32" alt="User">
           </a>
@@ -90,7 +84,7 @@
               </ul>
             </div>
           </div>
-        </li>
+        </li> -->
         <!-- #END# Tasks -->
         <li class="float-end">
           <button mat-icon-button (click)="toggleRightSidebar()" class="nav-notification-icons js-right-sidebar">
