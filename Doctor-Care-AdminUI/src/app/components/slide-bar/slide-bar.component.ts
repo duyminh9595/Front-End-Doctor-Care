@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ModalThemKhoaComponent } from '../modal-them-khoa/modal-them-khoa.component';
 
 @Component({
   selector: 'app-slide-bar',
@@ -15,7 +17,7 @@ export class SlideBarComponent implements OnInit {
   localStore: Storage = localStorage;
   nameAdmin!: string;
   imageUrl!: string;
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.nameAdmin = localStorage.getItem('emailAdminLogin')!
@@ -56,5 +58,17 @@ export class SlideBarComponent implements OnInit {
     this.local.removeItem("tokenAdminLogin")
     this.local.removeItem("adminImageUrl")
     window.location.href = '/';
+  }
+  showkhoabool: boolean = false;
+  showKhoa() {
+    this.showkhoabool = !this.showkhoabool;
+  }
+  themKhoa() {
+    const dialogRef = this.dialog.open(ModalThemKhoaComponent, {
+      width: '550px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
   }
 }

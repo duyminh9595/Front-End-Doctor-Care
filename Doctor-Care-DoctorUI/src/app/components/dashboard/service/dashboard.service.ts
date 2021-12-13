@@ -16,4 +16,20 @@ export class DashboardService {
       headers: yourHeader,
     });
   }
+  getDashboardMid() {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenDoctorLogin')}`
+    });
+    return this.httpClient.get<any>(this.APIEndPoint + "/doctor/core/topbenhnhantrongthang", {
+      headers: yourHeader,
+    });
+  }
+  getDashboardRight() {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenDoctorLogin')}`
+    });
+    return this.httpClient.get<any>(this.APIEndPoint + "/doctor/core/topthuocdungtrongthang", {
+      headers: yourHeader,
+    });
+  }
 }

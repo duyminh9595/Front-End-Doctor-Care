@@ -120,6 +120,26 @@
 
         </li>
         <li>
+          <a class="" class="menu-top" (click)="showKhoa()">
+            <i class="material-icons-two-tone">date_range</i>
+            <span class="hide-menu">Khoa
+            </span>
+          </a>
+          <ul class="ml-menu-2" style="display: block;" *ngIf="showkhoabool">
+            <li>
+              <a routerLink="/list-khoa" routerLinkActive="active">
+                Danh Sách Khoa
+              </a>
+            </li>
+            <li (click)="themKhoa()">
+              <a routerLinkActive="active">
+                Thêm Khoa
+              </a>
+            </li>
+          </ul>
+
+        </li>
+        <li>
           <a class="" class="menu-top" (click)="openshowMedicine()">
             <i class="material-icons-two-tone">description</i>
             <span class="hide-menu">Medicine

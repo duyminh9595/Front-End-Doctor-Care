@@ -82,6 +82,9 @@ import { ApproveDisableApointmentComponent } from './components/approve-disable-
 import { ModalDetailHosobenhanComponent } from './components/modal-detail-hosobenhan/modal-detail-hosobenhan.component';
 import { DetailDoctorComponent } from './components/detail-doctor/detail-doctor.component';
 import { DoanhThuComponent } from './components/doanh-thu/doanh-thu.component';
+import { ModalThemKhoaComponent } from './components/modal-them-khoa/modal-them-khoa.component';
+import { ListKhoaComponent } from './components/list-khoa/list-khoa.component';
+import { ListDoctorOnKhoaComponent } from './components/list-doctor-on-khoa/list-doctor-on-khoa.component';
 
 
 
@@ -108,6 +111,8 @@ const routes: Routes = [
       { path: 'editdoctor/:id', component: EditDoctorComponent },
       { path: 'editpatient/:id', component: EditPatientComponent },
       { path: 'doanhthu', component: DoanhThuComponent },
+      { path: 'list-khoa', component: ListKhoaComponent },
+      { path: 'khoa/:id', component: ListDoctorOnKhoaComponent },
     ]
     , canActivate: [VerifyJwt],
 
@@ -119,7 +124,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, AddDoctorComponent, ListDoctorsComponent, ListPatientsComponent, EditPatientComponent, AddPatientComponent, DetailPatientComponent, ListPaymentsComponent, InvoiceComponent, EditDoctorComponent, ImportMedicineComponent, ModalAddNewTypeMedicineComponent, ListMedicinesComponent, ModalDisalbleThuocComponent, ModalUpdatePriceThuocComponent, ListApointmentComponent, ApproveDisableApointmentComponent, ModalDetailHosobenhanComponent, DetailDoctorComponent, DoanhThuComponent,
+    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, AddDoctorComponent, ListDoctorsComponent, ListPatientsComponent, EditPatientComponent, AddPatientComponent, DetailPatientComponent, ListPaymentsComponent, InvoiceComponent, EditDoctorComponent, ImportMedicineComponent, ModalAddNewTypeMedicineComponent, ListMedicinesComponent, ModalDisalbleThuocComponent, ModalUpdatePriceThuocComponent, ListApointmentComponent, ApproveDisableApointmentComponent, ModalDetailHosobenhanComponent, DetailDoctorComponent, DoanhThuComponent, ModalThemKhoaComponent, ListKhoaComponent, ListDoctorOnKhoaComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),

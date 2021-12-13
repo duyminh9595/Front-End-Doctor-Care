@@ -19,6 +19,16 @@ export class DashboardComponent implements OnInit {
       {
         next: res => {
           this.top = res
+          this.ser.getDashboardMid().subscribe({
+            next: res => {
+              this.mid = res;
+              this.ser.getDashboardRight().subscribe({
+                next: res => {
+                  this.right = res
+                }
+              })
+            }
+          })
         }
       }
     )
