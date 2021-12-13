@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BenhNhanTrongThang } from 'src/app/models/benh-nhan-trong-thang';
+import { DashboardTop } from 'src/app/models/dashboard-top';
+import { ThuocTrongThang } from 'src/app/models/thuoc-trong-thang';
+import { DashboardService } from './service/dashboard.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -6,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private ser: DashboardService) { }
+  top!: DashboardTop;
+  mid: BenhNhanTrongThang[] = [];
+  right: ThuocTrongThang[] = [];
   ngOnInit(): void {
+    this.ser.getDashboardTop().subscribe(
+      {
+        next: res => {
+          this.top = res
+        }
+      }
+    )
   }
 
 }

@@ -55,9 +55,9 @@ export class DashboardComponent implements OnInit {
   }
   local: Storage = localStorage;
   doLogout() {
-    this.local.removeItem("emailAdminLogin")
-    this.local.removeItem("tokenAdminLogin")
-    this.local.removeItem("adminImageUrl")
+    this.local.removeItem("emailPatientLogin")
+    this.local.removeItem("tokenPatientLogin")
+    this.local.removeItem("patientImageUrl")
     window.location.href = '/';
   }
   huyApointment(item: TodayAppointment) {

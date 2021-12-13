@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ModalNghiPhepComponent } from '../modal-nghi-phep/modal-nghi-phep.component';
 
 @Component({
   selector: 'app-slide-bar',
@@ -15,7 +17,7 @@ export class SlideBarComponent implements OnInit {
   nameDoctor!: string;
   imageUrl!: string;
   localStore: Storage = localStorage;
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.nameDoctor = localStorage.getItem('emailDoctorLogin')!
@@ -52,5 +54,13 @@ export class SlideBarComponent implements OnInit {
     this.local.removeItem("tokenDoctorLogin")
     this.local.removeItem("doctorImageUrl")
     window.location.href = '/';
+  }
+  ShowNghiPhep() {
+    const dialogRef = this.dialog.open(ModalNghiPhepComponent, {
+      width: '650px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+
+    });
   }
 }

@@ -1,1 +1,187 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Dashboard</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/doctor/dashboard">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item active">Doctor Dashboard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Widgets -->
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="info-box7 l-bg-card1 order-info-box7">
+          <div class="info-box7-block">
+            <h5 class="m-b-15">Todays Patients</h5>
+            <h2 class="text-end"><i class="fas fa-user-injured float-start"></i><span>{{top.todaypatient}}</span></h2>
+            <p class="m-b-0">{{top.percent_patient *100}}% Higher Then Last Month</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="info-box7 l-bg-card2 order-info-box7">
+          <div class="info-box7-block">
+            <h5 class="m-b-15">Today Appointments</h5>
+            <h2 class="text-end"><i class="far fa-calendar-check float-start"></i><span>{{top.todayappointment}}</span>
+            </h2>
+            <p class="m-b-0">{{top.percent_appointment *100}}% Higher Then Last Month</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="info-box7 l-bg-card3 order-info-box7">
+          <div class="info-box7-block">
+            <h5 class="m-b-15">Khám bệnh</h5>
+            <h2 class="text-end"><i class="fas fa-cut float-start"></i><span>{{top.todaykhambenh}}</span></h2>
+            <p class="m-b-0">{{top.percent_khambenh *100 }}% Higher Then Last Month</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="info-box7 l-bg-card4 order-info-box7">
+          <div class="info-box7-block">
+            <h5 class="m-b-15">Income</h5>
+            <h2 class="text-end"><i class="fab fa-internet-explorer float-start"></i><span>{{top.earning}}</span>
+            </h2>
+            <p class="m-b-0">{{top.percent_earning *  100}}% Higher Then Last Month</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #END# Widgets -->
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="card">
+          <div class="header">
+            <h2>
+              Hồ sơ bệnh án today</h2>
 
+          </div>
+          <div class="tableBody">
+            <div class="table-responsive">
+              <table class="table table-hover ">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Patient Name</th>
+                    <th>Gender</th>
+                    <th>Last Visit</th>
+                    <th>Diseases</th>
+                    <th>Report</th>
+                    <th>Details </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-img">
+                      <img src="assets/images/user/user1.jpg" alt="">
+                    </td>
+                    <td>John Doe</td>
+                    <td>Male</td>
+                    <td>12/05/2016 </td>
+                    <td>
+                      <div class="badge col-red">Fever</div>
+                    </td>
+                    <td>
+                      <i class="far fa-file-pdf tbl-pdf"></i>
+                    </td>
+                    <td>
+                      <button mat-flat-button color="primary">Details</button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+          <div class="header">
+            <h2>Patients Group</h2>
+          </div>
+          <div class="list-body">
+            <ul class="list-unstyled list-unstyled-noborder">
+              <li class="patient-group-list">
+                <div class="d-flex">
+                  <div class="lbl-bedge l-bg-orange">
+                    <span class="lbl-bedge-title">C</span>
+                  </div>
+                  <div class="group-details font-16">Cholesterol</div>
+                </div>
+                <div class="ms-auto">
+                  <div class="media-title text-muted mb-0 font-14">5 Patients</div>
+                </div>
+              </li>
+              <li class="patient-group-list">
+                <div class="d-flex">
+                  <div class="lbl-bedge l-bg-card1">
+                    <span class="lbl-bedge-title">D</span>
+                  </div>
+                  <div class="group-details font-16">Diabetic</div>
+                </div>
+                <div class="ms-auto">
+                  <div class="media-title text-muted mb-0 font-14">14 Patients</div>
+                </div>
+              </li>
+              <li class="patient-group-list">
+                <div class="d-flex">
+                  <div class="lbl-bedge l-bg-card2">
+                    <span class="lbl-bedge-title">L</span>
+                  </div>
+                  <div class="group-details font-16">Low Blood Pressure</div>
+                </div>
+                <div class="ms-auto">
+                  <div class="media-title text-muted mb-0 font-14">10 Patients</div>
+                </div>
+              </li>
+              <li class="patient-group-list">
+                <div class="d-flex">
+                  <div class="lbl-bedge l-bg-cyan">
+                    <span class="lbl-bedge-title">H</span>
+                  </div>
+                  <div class="group-details font-16">Hypertension</div>
+                </div>
+                <div class="ms-auto">
+                  <div class="media-title text-muted mb-0 font-14">21 Patients</div>
+                </div>
+              </li>
+              <li class="patient-group-list">
+                <div class="d-flex">
+                  <div class="lbl-bedge l-bg-red">
+                    <span class="lbl-bedge-title">M</span>
+                  </div>
+                  <div class="group-details font-16">Malaria</div>
+                </div>
+                <div class="ms-auto">
+                  <div class="media-title text-muted mb-0 font-14">11 Patients</div>
+                </div>
+              </li>
+              <li class="patient-group-list">
+                <div class="d-flex">
+                  <div class="lbl-bedge l-bg-card3">
+                    <span class="lbl-bedge-title">D</span>
+                  </div>
+                  <div class="group-details font-16">Dental Problem</div>
+                </div>
+                <div class="ms-auto">
+                  <div class="media-title text-muted mb-0 font-14">17 Patients</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

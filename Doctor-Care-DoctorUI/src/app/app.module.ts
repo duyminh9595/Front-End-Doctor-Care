@@ -61,6 +61,11 @@ import {
 import { HttpClientModule } from '@angular/common/http';
 import { ListAppointmentTodayDoctorComponent } from './component/list-appointment-today-doctor/list-appointment-today-doctor.component';
 import { KhamBenhComponent } from './components/kham-benh/kham-benh.component';
+import { ListPatientsComponent } from './components/list-patients/list-patients.component';
+import { HoSoBenhAnComponent } from './components/ho-so-benh-an/ho-so-benh-an.component';
+import { ModalDetailAppointmentComponent } from './components/modal-detail-appointment/modal-detail-appointment.component';
+import { DoanhThuComponent } from './components/doanh-thu/doanh-thu.component';
+import { ModalNghiPhepComponent } from './components/modal-nghi-phep/modal-nghi-phep.component';
 
 
 const routes: Routes = [
@@ -73,6 +78,8 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'list-apointment', component: ListAppointmentTodayDoctorComponent },
       { path: 'kham-benh/:lichhenid', component: KhamBenhComponent },
+      { path: 'list-patients', component: ListPatientsComponent },
+      { path: 'hoso/:id', component: HoSoBenhAnComponent },
     ]
     , canActivate: [VerifyJwt],
 
@@ -84,7 +91,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, ListAppointmentTodayDoctorComponent, KhamBenhComponent,
+    LoginComponent, DashboardComponent, HompageComponent, HeaderComponent, SlideBarComponent, ListAppointmentTodayDoctorComponent, KhamBenhComponent, ListPatientsComponent, HoSoBenhAnComponent, ModalDetailAppointmentComponent, DoanhThuComponent, ModalNghiPhepComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
@@ -104,7 +111,7 @@ const routes: Routes = [
       appId: "1:1053553302212:web:5ca79d1dd45c389ca28791",
       measurementId: "G-6Q30DEJELJ"
     }),
-    HttpClientModule
+    HttpClientModule, MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

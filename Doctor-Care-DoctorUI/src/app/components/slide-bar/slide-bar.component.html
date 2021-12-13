@@ -7,7 +7,6 @@
         <li class="sidebar-user-panel">
           <div class="user-panel">
             <div class=" image">
-              <img src={{imageUrl}} class="img-circle user-img-circle" alt="User Image" />
             </div>
           </div>
           <div class="profile-usertitle">
@@ -33,12 +32,13 @@
 
         </li>
         <li>
-          <a class="" class="menu-top" (click)="openshowpatient()">
+          <a class="" class="menu-top" (click)="openshowpatient()" [routerLink]="['/list-patients']"
+            routerLinkActive="router-link-active">
             <i class="material-icons-two-tone">face</i>
             <span class="hide-menu">Patient
             </span>
           </a>
-          <ul class="ml-menu-2" style="display: block;" *ngIf="patientshow">
+          <!-- <ul class="ml-menu-2" style="display: block;" *ngIf="patientshow">
             <li>
               <a routerLink="/list-patients" routerLinkActive="active">
                 List Patients
@@ -54,27 +54,15 @@
                 Block appointment
               </a>
             </li>
-          </ul>
+          </ul> -->
 
         </li>
         <li>
-          <a class="" class="menu-top" (click)="openshowPayment()">
+          <a (click)="ShowNghiPhep()" class="menu-top" (click)="openshowPayment()">
             <i class="material-icons-two-tone">monetization_on</i>
-            <span class="hide-menu">Payment
+            <span class="hide-menu">Nghỉ phép
             </span>
           </a>
-          <ul class="ml-menu-2" style="display: block;" *ngIf="paymentshow">
-            <li>
-              <a routerLink="/list-payments" routerLinkActive="active">
-                All payments
-              </a>
-            </li>
-            <li>
-              <a routerLink="/add-patient" routerLinkActive="active">
-                Edit appointment
-              </a>
-            </li>
-          </ul>
 
         </li>
         <li>
