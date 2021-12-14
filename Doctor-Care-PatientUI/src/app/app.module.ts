@@ -75,6 +75,7 @@ import { ModalChangePasswordComponent } from './components/modal-change-password
 import { ModalForgotPasswordComponent } from './components/modal-forgot-password/modal-forgot-password.component';
 import { RenewpasswordComponent } from './components/renewpassword/renewpassword.component';
 import { ModalRenewPasswordComponent } from './components/modal-renew-password/modal-renew-password.component';
+import { ConfirmTokenComponent } from './components/confirm-token/confirm-token.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -95,6 +96,7 @@ const routes: Routes = [
 
   },
   { path: 'forgotpassword/:token', component: RenewpasswordComponent },
+  { path: 'api/register/confirm/token/:token', component: ConfirmTokenComponent },
   { path: '#', redirectTo: '', pathMatch: 'full' },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
@@ -105,7 +107,7 @@ const routes: Routes = [
     AppComponent,
     LoginComponent, DashboardComponent, HompageComponent,
     HeaderComponent, SlideBarComponent, AddAppointmentComponent,
-    AddAppointmentLayoutComponent, ViewAppointmentComponent, ModalAddApointmentsComponent, PastApointmentComponent, DetailApointmentComponent, HoSoBenhAnComponent, ModalChangePasswordComponent, ModalForgotPasswordComponent, RenewpasswordComponent, ModalRenewPasswordComponent,
+    AddAppointmentLayoutComponent, ViewAppointmentComponent, ModalAddApointmentsComponent, PastApointmentComponent, DetailApointmentComponent, HoSoBenhAnComponent, ModalChangePasswordComponent, ModalForgotPasswordComponent, RenewpasswordComponent, ModalRenewPasswordComponent, ConfirmTokenComponent,
   ],
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),

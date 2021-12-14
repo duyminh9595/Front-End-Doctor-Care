@@ -23,7 +23,7 @@
           <div class="body">
             <div class="row align-items-center">
               <div class="col-md-4">
-                <img src=infoPatient.image_url alt="" class="w-100">
+                <img src={{infoPatient.image_url}} alt="" class="w-100">
               </div>
               <div class="col-md-8">
                 <h4 class="font-20 weight-500 mb-2">
@@ -51,7 +51,7 @@
                 <ul class="list-unstyled list-unstyled-border list-unstyled-noborder"
                   *ngIf="today_appointments.length>0">
                   <li class="app-list" *ngFor="let item of today_appointments">
-                    <img alt="image" class="rounded-circle" width="40" src="item.image_url">
+                    <img alt="image" class="rounded-circle" width="40" src={{item.image_url}}>
                     <div class="set-flex">
                       <div class="media-title font-16">{{item.bacsiname}}</div>
                       <div class="text-job text-muted mb-0">{{item.tenkhoa}}</div>
@@ -90,7 +90,7 @@
               <mat-tab label="Past Appointment">
                 <ul class="list-unstyled user-progress list-unstyled-border list-unstyled-noborder">
                   <li class="app-list" *ngFor="let item of before_today_appointments">
-                    <img alt="image" class="rounded-circle" width="40" src="item.image_url">
+                    <img alt="image" class="rounded-circle" width="40" src={{item.image_url}}>
                     <div class="set-flex">
                       <div class="media-title font-16">{{item.bacsiname}}</div>
                       <div class="text-job text-muted mb-0">{{item.tenkhoa}}</div>
