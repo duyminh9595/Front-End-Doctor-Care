@@ -11,4 +11,5 @@ export class DoctorInList {
     bangcap!: string;
     cmnd!: string;
     password!: string;
+    status!: boolean;
 }

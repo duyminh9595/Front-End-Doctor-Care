@@ -49,6 +49,7 @@ export class EditPatientComponent implements OnInit {
       const format = 'yyyy-MM-dd';
       const locale = 'en-US';
       const formattedDate = formatDate(this.patient.date_of_birth, format, locale);
+      this.patient.date_of_birth = formattedDate
       let newDate = new Date(formattedDate);
       this.dateOfBirth = new FormControl(newDate);
       if (this.patient.status) {

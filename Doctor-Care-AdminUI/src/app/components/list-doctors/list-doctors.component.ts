@@ -58,4 +58,14 @@ export class ListDoctorsComponent implements OnInit {
   seeAboutDoctor(item: DoctorInList) {
     this.router.navigateByUrl('/doctor/' + item.id);
   }
+  deletedoctor(id: number) {
+    this.ser.deleteDoctor(id).subscribe({
+      next: res => {
+        this.doctors = [];
+        this.ser.getDanhSachDoctor().subscribe(this.getDatas());
+      }, error: err => {
+        alert("Lỗi")
+      }
+    })
+  }
 }

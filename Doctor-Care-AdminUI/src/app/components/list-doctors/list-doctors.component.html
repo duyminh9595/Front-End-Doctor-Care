@@ -73,16 +73,17 @@
                     <th scope="col">#</th>
                     <th scope="col">Full Name</th>
                     <th scope="col">Tên Khoa</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Chức Năng</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let item of doctors">
-                    <th scope="row"><input type="checkbox" id="vehicle1" name="vehicle1" value="item.id"
-                        (click)="getId($event)" /></th>
+                    <td>{{item.id}}</td>
                     <td>{{item.fullname}}</td>
                     <td>{{item.tenkhoa}}</td>
+                    <td>{{item.status}}</td>
                     <td *ngIf="item.gender">Nam</td>
                     <td *ngIf="!item.gender">Nữ</td>
                     <td>
@@ -92,7 +93,7 @@
                       <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="editDoctor(item.id)">
                         <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
                       </button>
-                      <button mat-icon-button color="accent" class="btn-tbl-delete">
+                      <button mat-icon-button color="accent" class="btn-tbl-delete" (click)="deletedoctor(item.id)">
                         <mat-icon aria-label="Delete" class="col-white">delete</mat-icon>
                       </button></td>
                   </tr>

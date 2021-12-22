@@ -66,6 +66,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Full Name</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Tên Khoa</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Chi tiết</th>
@@ -75,6 +76,7 @@
                   <tr *ngFor="let item of doctors">
                     <td>{{item.id}}</td>
                     <td>{{item.fullname}}</td>
+                    <td>{{item.status}}</td>
                     <td>{{item.tenkhoa}}</td>
                     <td *ngIf="item.gender">Nam</td>
                     <td *ngIf="!item.gender">Nữ</td>

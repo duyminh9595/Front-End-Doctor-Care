@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DoctorInList } from 'src/app/models/doctor-in-list';
 import { FindNameDoctor } from 'src/app/models/find-name-doctor';
@@ -15,6 +15,14 @@ export class DanhsachdoctorService {
   }
   getDanhSachDoctorByName(data: FindNameDoctor) {
     return this.httpClient.post<getResponseDoctor>(this.APIEndPoint + "/doctor/getbacsibyname", data);
+  }
+  deleteDoctor(id: number) {
+    const yourHeader: HttpHeaders = new HttpHeaders({
+      Authorization: `${localStorage.getItem('tokenAdminLogin')}`
+    });
+    return this.httpClient.post<any>(this.APIEndPoint + "/admin/core/deletedoctor?id=" + id, null, {
+      headers: yourHeader,
+    });
   }
 }
 interface getResponseDoctor {
